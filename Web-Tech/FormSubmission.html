@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mode of form submission</title>
+</head>
+<body>
+    <form action="page.php" method="post">
+        <label>Enter Value: </label>                                                                                                                                 
+        <input type="text" name="txtValue"> <br>
+        <input type="submit" name="btnSubmit" value="submit" onclick="throughJs();">
+    </form>
+
+    <form action="page.php" method="post">
+        <label>Enter Value: </label> 
+        <input type="text" name="txtValue"> <br>
+        <input type="button" name="btnSubmit" value="submit" onclick="throughJs();">
+    </form>
+
+    <form action="page.php" method="post" onsubmit="throughJs();">
+        <label>Enter Value: </label>                                                                                                                                 
+        <input type="text" name="txtValue"> <br>
+        <input type="button" name="btnSubmit" value="submit">
+    </form>
+    
+    <form action="page.php" method="post" onsubmit="throughJs();">
+        <label>Enter Value: </label>                                                                                                                                 
+        <input type="text" name="txtValue"> <br>
+        <input type="submit" name="btnSubmit" value="submit">
+    </form>
+
+    <form method="post" >
+        <label for="">Enter Value: </label>                                                                                                                                 
+        <input type="text" name="txtValue"> <br>
+        <input type="button" name="btnSubmit" value="submit" onclick="throughJs();">
+    </form>
+    <span id="test"></span>
+    <script>
+        function throughJs() {
+            var returnValue = confirm("hello");
+            if(returnValue === true) {
+                document.getElementById("test").innerHTML = "Executed by OK";
+              
+            }
+            else   {
+                document.getElementById("test").innerHTML = "Executed by Cancel";
+                
+            }
+        }
+    </script>
+</body>
+</html>

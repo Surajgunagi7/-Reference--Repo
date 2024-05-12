@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Work</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Reading the Input Values and Storing in Array</legend>
+        <table>
+            <tr>
+                <td><label>Enter Name:</label></td>
+                <td><label><input type="text" name="textName" id="stName" placeholder="Student name"></label></td>
+            </tr>
+            <tr>
+                <td><label>Enter the Student USN:</label></td>
+                <td>
+                    <select id="DropDownList">
+                        <option>-select USN-</option>
+                        <option>2SD22CS1005</option>
+                        <option>2SD22CS001</option>
+                        <option>2SD22CS005</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Select Division</label></td>
+                <td>
+                    <input type="radio" name="radioDiv" value="A-Division" >A-division 
+                    <input type="radio" name="radioDiv" value="B-Division" >B-division 
+                </td>
+            </tr>
+            <tr>
+                <td><label>Select Courses</label></td>
+                <td>
+                    <input type="checkbox" name="checkCourse" value="Web-sockets">Web-sockets
+                    <input type="checkbox" name="checkCourse" value="Core Java">Core Java
+                    <input type="checkbox" name="checkCourse" value="JS programming">JS program
+                </td>
+            </tr>
+            <tr>
+                <td><label>Enter registration Date: </label></td>
+                <td><input type="date" id="dateReg"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" value="Register" onclick="DisplayInfo();"></td>
+            </tr>
+        </table>
+    </fieldset>
+    <span id="result"></span>
+    <script>
+        function DisplayInfo() {
+            const StudentInfo = [];
+            StudentInfo.push(document.getElementById("stName").value)
+            StudentInfo.push(document.getElementById("DropDownList").value)
+
+            let RadioBtnValue = document.getElementsByName("radioDiv");
+            for(let i = 0; i < RadioBtnValue.length;i++) {
+                if(RadioBtnValue[i].checked){
+                    StudentInfo.push(RadioBtnValue[i].value)
+                }
+            }
+            let chkBtnValue = document.getElementsByName("checkCourse");
+            for(let i = 0; i < chkBtnValue.length;i++) {
+                if(chkBtnValue[i].checked){
+                    StudentInfo.push(chkBtnValue[i].value)
+                }
+            }
+
+            StudentInfo.push(document.getElementById("dateReg").value)
+
+            const output = document.getElementById('result');
+            let htmlContent = '<ul>'; 
+
+            StudentInfo.forEach(info => {
+                htmlContent += `<li>${info}</li>`;
+            });
+            htmlContent += '</ul>'; 
+            output.innerHTML = htmlContent; 
+        }
+    </script>
+</body>
+</html>

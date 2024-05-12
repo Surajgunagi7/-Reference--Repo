@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Web based simple calculator</title>
+    <script type="text/javascript">
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Simple calculator</legend>
+        <table>
+            <tr>
+                <td><label>Enter the first Number:</label></td>
+                <td><input type="text" id="txtnum1" placeholder="Enter the first Number"></td>
+            </tr>
+            <tr>
+                <td><label>Enter the second Number:</label></td>
+                <td><input type="text" id="txtnum2" placeholder="Enter the second Number"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="button" value="Add Numbers" onclick="addTwoNumbers();"></td>
+            </tr>
+        </table>
+    </fieldset>
+    <span id="displayresult"></span>
+</body>
+</html>
+<script type="text/javascript">
+    function addTwoNumbers(){
+    var num1 = document.getElementById("txtnum1").value;
+    var num2 = document.getElementById("txtnum2").value;
+
+    if(num1 != "" && num2 != "" ){
+        var result = parseInt(num1) + parseInt(num2);
+        document.getElementById("displayresult").innerText = "Addition of two numbers:"+result;
+    }
+    else{
+        alert("Invalid input!!!!!")
+    }
+}
+</script>

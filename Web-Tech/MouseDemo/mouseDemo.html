@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="message" onmouseover="changeTextStyle();" onmouseout="restoreTextStyle();">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+    </div>
+    <img src="./Images1.jpg" width="400px" height="400px"  id="img" onmouseover="changeImg();" onmouseout="restoreImg();">
+
+    <script>
+        function changeTextStyle() {
+            document.getElementById("message").style.color = "blue";
+        }
+
+        function restoreTextStyle() {
+            document.getElementById("message").style.color = "black";
+        }
+        function changeImg() {
+            document.getElementById("img").src = "./Image2.jpg";
+        }
+        function restoreImg() {
+            document.getElementById("img").src = "./Images1.jpg";
+        }
+    </script>
+</body>
+</html>
