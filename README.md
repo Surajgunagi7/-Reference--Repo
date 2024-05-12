@@ -2,7 +2,7 @@
 
 # JAVA
 
-## This repository has branches contains the java codes related to Threads(To be updated), Generics and collection classes and Streams(To be updated).
+## This repository has branches contains the java codes related to Threads, Generics and collection classes and Streams(To be updated).
 
 # Web Technology
 
