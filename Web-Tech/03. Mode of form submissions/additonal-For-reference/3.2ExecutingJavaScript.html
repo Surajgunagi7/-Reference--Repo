@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Submission with JavaScript</title>
+</head>
+<body>
+
+  <form id="myForm" action="submit.php" method="POST">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username">
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+      var username = document.getElementById('username').value;
+      if (username.trim() === '') {
+        alert('Please enter a username!');
+      } else {
+        alert('Submitting form with username: ' + username);
+        // Perform additional actions or submit the form programmatically
+        this.submit(); // Submit the form
+      }
+    });
+  </script>
+
+</body>
+</html>

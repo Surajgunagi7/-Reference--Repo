@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays in JS</title>
+</head>
+<body>
+    <center>
+        <h3>Arrays in JavaScript</h3>
+        <hr>
+            <input type="text" id="r">
+            <input type="submit" onclick="read();">
+    </center>
+    <script>
+        //Push in the input values to the arrays
+        // function read() {
+        //     let arr = [];
+        //     arr.push(document.getElementById("r").value)
+        //     document.write(arr)
+        // }
+
+
+        // var arrayType1 = new Array("s1","s2","s3")
+        // var arrayType2 = ["s1","s2","s3"]
+
+        //to display the arrays
+        //the arrays is converted to string to be displayed
+        // document.write("Type 1 :"+ arrayType1 + "<br>")
+        // document.write("Type 2 :"+ arrayType2)
+
+
+        // console.log("type1" + arrayType1);
+        // console.log("type1" , arrayType1);
+
+        // var aMarks = new Array(10,20,30,35)
+        // var bMarks = [40,45,50]
+
+        //errors 
+        // var aMarks = new Array(35)
+        // var bMarks = [50]
+        // document.write("A div: " + aMarks + "<br>")  //error in case of single element
+        // document.write("Arrays of A - marks: " + aMarks.length + "<br>")
+        // document.write("Arrays of B - marks: " + bMarks.length)
+
+        //using forIn loop
+        // var m = null;
+        // document.write("A div marks: " + "<br>")
+        // for(m in aMarks) {
+        //     document.write(aMarks[m] + "<br>")
+        // }
+
+        //Array methods
+        // var result = aMarks.concat(bMarks)
+        // var result = [...aMarks,...bMarks]
+        // document.write(result)
+
+        //Push Pop
+        // aMarks.push(99)
+        // aMarks.push(39)
+        // var test = aMarks.push(9)
+        // document.write(test) // returns the length of the newly modified arrays
+        // document.write(aMarks + " length: " + aMarks.length + "<br>" ) 
+
+        // aMarks.pop()
+        // var test2 = aMarks.pop()
+        // document.write(test2) // return the popped element
+        // document.write(aMarks + "   length: " + aMarks.length)
+
+    </script>
+        <hr>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Redirect</title>
+</head>
+<body>
+    <form action="">
+        <input type="button" value="new window" onclick="redirect();">
+    </form>
+    <script>
+        function redirect() {
+            // Correctly pass window features as a single string
+            window.open('https://sdmcet.ac.in/', 'mywindow', 'width=400,height=200,toolbar=yes,status=yes');
+        }
+    </script>
+</body>
+</html>
