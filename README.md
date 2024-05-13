@@ -6,12 +6,12 @@
 
 # Web Technology
 
-### This repo jas some Exceptions like :
+### This repo has some Exceptions like :
+#### Codes related to array and string buil-in functions are not added
 #### Use of "let" instead of "var"
 #### Some additional codes are present... etc
 #### Some of the simple codes are not added
 #### All the Js codes written within the script tag & not in separate file
-#### The code which states difference between type="submit" and type="button" is not that clear
 
 ## Any change info through PR
 # Happy learning❤️❤️
