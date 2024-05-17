@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Example of this keyword</title>
+</head>
+<body>
+    <form>
+        <center>
+            <h3>This keyword in Javascript</h3>
+            <label>Enter the College Name:</label>
+            <input type="text" name="txtname" id="txtname"><br>
+            <input type="button" value="Display" onclick="readDisplayValue(this.form)">
+        </center>
+    </form>
+    <span id="displayMsg"></span>
+</body>
+<script type="text/javascript">
+    function readDisplayValue(Data){
+        document.getElementById("displayMsg").innerHTML = "The college name is: " + Data.txtname.value;
+    }
+</script>
+</html>
