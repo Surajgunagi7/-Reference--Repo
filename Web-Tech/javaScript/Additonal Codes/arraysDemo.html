@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Student Record</legend>
+        <h3>Add values to arrays and loop through them</h3>
+        <form action="" method="post">
+            <label for="">Enter value</label>
+            <input type="text" id="txtName" />
+            <input type="button" value="Add to Array" onclick="addArray();"/>
+            <input type="button" value="show Array" onclick="showArray();" />
+        </form>
+        Names: <div id="result"></div>
+    </fieldset>
+    <script>
+        var arr =  [];
+        function addArray() {
+            var ipValue = document.getElementById("txtName").value;
+
+            if(ipValue != "") {
+                arr.push(ipValue);
+                console.log("added");
+                document.getElementById("txtName").value = "";
+            }
+        }
+        function showArray() {
+            document.getElementById("result").innerHTML = "";
+            if(arr.length > 0) {
+                for(var i = 0;i < arr.length;i++) {
+                    document.getElementById("result").innerHTML += arr[i] + "<br>";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
