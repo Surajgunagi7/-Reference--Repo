@@ -11,4 +11,6 @@
     echo "Second variable: ".$num."<br/>";
     echo "Third variable: ".$floatNum;
 
+    echo date("y-m-d");
+
 ?>
