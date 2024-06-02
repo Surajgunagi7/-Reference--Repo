@@ -38,7 +38,7 @@ public class VowelsAndConsonants extends HttpServlet {
 		int vowelCount = 0;
 		int constantCount = 0;
 
-		String inputTxt = usrInputTxt;
+		String inputTxt = usrInputTxt.toLowerCase();
 
 		for (int i = 0; i < inputTxt.length(); i++) {
 			char c = inputTxt.charAt(i);
