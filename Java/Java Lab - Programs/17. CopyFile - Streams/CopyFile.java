@@ -1,3 +1,4 @@
+package sdmcet.oop;
 
 import java.io.*;
 
@@ -12,12 +13,11 @@ class CopyFile {
 			return;
 		}
 		// Copy a File.
-	      
-	      
+
 		try {
 			// Attempt to open the files.
-			fin = new FileInputStream("source.txt");
-			fout = new FileOutputStream("destination.txt");
+			fin = new FileInputStream(args[0]);
+			fout = new FileOutputStream(args[1]);
 			do {
 				i = fin.read();
 				if (i != -1)
