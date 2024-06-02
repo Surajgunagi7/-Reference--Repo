@@ -5,7 +5,7 @@ class Resource {
 	boolean valueSet = false;
 
 	synchronized void request() {
-		while (!valueSet) {
+		while (valueSet) {
 			try {
 				wait();
 			} catch (InterruptedException e) {
@@ -13,12 +13,12 @@ class Resource {
 			}
 		}
 		System.out.println("Request Receiced");
-		valueSet = false;
+		valueSet = true;
 		notify();
 	}
 
 	synchronized void response() {
-		while (valueSet) {
+		while (!valueSet) {
 			try {
 				wait(); 
 			} catch (InterruptedException e) {
@@ -26,7 +26,7 @@ class Resource {
 			}
 		}
 		System.out.println("Response sent");
-		valueSet = true;
+		valueSet = false;
 		notify();
 	}
 }
