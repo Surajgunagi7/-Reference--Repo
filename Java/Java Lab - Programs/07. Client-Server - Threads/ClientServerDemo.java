@@ -4,19 +4,6 @@ class Resource {
 	boolean valueSet = false;
 
 	synchronized void request() {
-		while (!valueSet) {
-			try {
-				wait();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-		System.out.println("Request Receiced");
-		valueSet = false;
-		notify();
-	}
-
-	synchronized void response() {
 		while (valueSet) {
 			try {
 				wait();
@@ -24,8 +11,21 @@ class Resource {
 				e.printStackTrace();
 			}
 		}
-		System.out.println("Response sent");
+		System.out.println("Request Receiced");
 		valueSet = true;
+		notify();
+	}
+
+	synchronized void response() {
+		while (!valueSet) {
+			try {
+				wait();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		System.out.println("Response sent");
+		valueSet = false;
 		notify();
 	}
 }
