@@ -1,6 +1,6 @@
 # Important Notice Read!!
 
-# JAVA
+# JAVA Web
 
 ## This repository has branches contains the java codes related to Threads, Generics and collection classes.
 
