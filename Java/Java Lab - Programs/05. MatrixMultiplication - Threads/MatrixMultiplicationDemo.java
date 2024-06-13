@@ -1,3 +1,6 @@
+package Thread.Pract;
+
+import java.util.*;
 
 class MatrixMultiplier extends Thread {
 	private final int[][] matrixA;
@@ -23,14 +26,62 @@ class MatrixMultiplier extends Thread {
 	}
 }
 
-public class MatrixMultiplicationDemo {
-	public static void main(String[] args) {
-		int[][] matrixA = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-		int[][] matrixB = { { 9, 8, 7 }, { 6, 5, 4 }, { 3, 2, 1 } };
-		int[][] resultMatrix = new int[matrixA.length][matrixB[0].length];
+class InvalidMatrixOrderException extends Exception {
+	private String title;
 
+	InvalidMatrixOrderException(String title) {
+		this.title = title;
+	}
+
+	@Override
+	public String toString() {
+		return title;
+	}
+
+}
+
+public class MatrixMultiplicationDemo {
+
+	static public void read(int[][] matrix) {
+		Scanner sc = new Scanner(System.in);
+
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[0].length; j++) {
+				matrix[i][j] = sc.nextInt();
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter the order of the Matrix A:");
+		int m = sc.nextInt();
+		int n = sc.nextInt();
+		System.out.println("Enter the order of the Matrix A:");
+		int p = sc.nextInt();
+		int q = sc.nextInt();
+
+		if (n != p) {
+			try {
+				throw new InvalidMatrixOrderException("Invalid Order of the Matrix");
+			} catch (InvalidMatrixOrderException imo) {
+				imo.printStackTrace();
+				System.exit(0);
+			}
+		}
+
+		int[][] matrixA = new int[m][n];
+		int[][] matrixB = new int[p][q];
+		int[][] resultMatrix = new int[m][q];
+
+		System.out.println("Enter the " + (m * n) + " elements of MatrixA: ");
+		read(matrixA);
+
+		System.out.println("Enter the " + (p * q) + " elements of MatrixB: ");
+		read(matrixB);
 		// Create threads for each element of the result matrix
-		Thread[][] threads = new Thread[matrixA.length][matrixB[0].length];
+		Thread[][] threads = new Thread[m][q];
 		for (int i = 0; i < matrixA.length; i++) {
 			for (int j = 0; j < matrixB[0].length; j++) {
 				threads[i][j] = new MatrixMultiplier(matrixA, matrixB, resultMatrix, i, j);
