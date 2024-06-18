@@ -1,0 +1,5 @@
+To run program either give a memory address that is nearer to 4lakhs 
+
+If you to write at 0x9000 itself then 
+(right click) 'Target' on the then link 'Option of target'
+ 	 then 'linker' - change the base address from 4lakh to the 0x9000 and then run it by creating a label
