@@ -3,6 +3,7 @@
     print("Hello from print<br/>");
     printf("Hello from printf");
 
+
     $name = "SDM College";
     $num = 455;
     $floatNum = 2.3;
