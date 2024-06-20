@@ -6,7 +6,8 @@ public class ReverseStringServer {
 		int port = 12345; //Port Number
 
 		//Create a ServerSocket to LISTEN to the client on the PORT
-		try (ServerSocket serverSocket = new ServerSocket(port)) {
+		try {
+			ServerSocket serverSocket = new ServerSocket(port)) 
 			System.out.println("Server is listening on port " + port);
 
 			//The Server waits(blocks) until Client Connects
