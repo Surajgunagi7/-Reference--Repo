@@ -8,7 +8,7 @@ public class ReverseStringClient {
 
         //Create a Socket Object to connect to the Server(host name, port)
         try {
-            Socket socket = new Socket(hostname, port)) 
+            Socket socket = new Socket(hostname, port);
         	System.out.println("Client: Connected to the Server");
         	
         	//Input and Output Stream established with the Server
