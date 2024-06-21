@@ -4,7 +4,7 @@ class Vehicle {
 	private String chassisNumber;
 	private String manufacturer;
 
-	public Vehicle(int wheels, String engineNumber, String chassisNumber, String manufacturer) {
+	public Vehicle(String engineNumber, String chassisNumber, String manufacturer) {
 		this.engineNumber = engineNumber;
 		this.chassisNumber = chassisNumber;
 		this.manufacturer = manufacturer;
@@ -21,7 +21,7 @@ class Car extends Vehicle {
 	private int wheels;
 
 	public Car(int wheels, String engineNumber, String chassisNumber, String manufacturer) {
-		super(wheels, engineNumber, chassisNumber, manufacturer);
+		super(engineNumber, chassisNumber, manufacturer);
 		this.wheels = wheels;
 	}
 	public void displayInfo() {
@@ -33,7 +33,7 @@ class Car extends Vehicle {
 class Bike extends Vehicle {
 	private int wheels;
 	public Bike(int wheels, String engineNumber, String chassisNumber, String manufacturer) {
-		super(wheels, engineNumber, chassisNumber, manufacturer);
+		super(engineNumber, chassisNumber, manufacturer);
 		this.wheels = wheels;
 	}
 	
@@ -46,7 +46,7 @@ class Bike extends Vehicle {
 class Truck extends Vehicle {
 	private int wheels;
 	public Truck(int wheels, String engineNumber, String chassisNumber, String manufacturer) {
-		super(wheels, engineNumber, chassisNumber, manufacturer);
+		super(engineNumber, chassisNumber, manufacturer);
 		this.wheels = wheels;
 	}
 	
