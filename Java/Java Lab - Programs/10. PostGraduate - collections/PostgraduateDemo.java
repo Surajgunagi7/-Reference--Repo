@@ -15,19 +15,22 @@ class Students {
 	}
 
 	public void display() {
-		System.out.println(
-				"Roll No: " + this.rollNo + " USN: " + this.USN + " SEM: " + this.semester + " Phone: " + this.mobileNo);
+		System.out.println("Roll No: " + this.rollNo + " USN: " + this.USN + " SEM: " + this.semester + " Phone: "
+				+ this.mobileNo);
 	}
 
 }
 
-public class PostgraduateDemo {
+public class Post {
 
 	public static void main(String[] args) {
+		
 		Vector<Students> vStudents = new Vector<Students>(20, 5);
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Request to Increase Capacity of the Student:(y/n)");
 		char response = sc.next().charAt(0);
+		
 		if (response == 'y' || response == 'n') {
 			if (response == 'y') {
 				vStudents.ensureCapacity(25);
@@ -44,15 +47,20 @@ public class PostgraduateDemo {
 		for (Students st : vStudents) {
 			st.display();
 		}
-		
-		vStudents.removeElementAt(1);
-		vStudents.removeElementAt(1);
+
+		for (int i = 0; i < vStudents.size(); i++) {
+			Students s = vStudents.get(i);
+			if (s.rollNo == 2 || s.rollNo == 3) {
+				vStudents.remove(i);
+				i--;
+			}
+		}
 		System.out.println("\nRoll no : 2 and Roll No: 3 Voluntarily unrolled from the course");
-		
-		vStudents.addElement(new Students(2, "2SD22CS021", 4, 8752365856L));
-		vStudents.addElement(new Students(3, "2SD22CS022", 4, 1478369854L));
+
+		vStudents.addElement(new Students(4, "2SD22CS021", 4, 8752365856L));
+		vStudents.addElement(new Students(5, "2SD22CS022", 4, 1478369854L));
 		System.out.println("After a Month two students are enrolled");
-		
+
 		System.out.println("Current Infomation of all the Students Enrolled");
 		for (Students st : vStudents) {
 			st.display();
